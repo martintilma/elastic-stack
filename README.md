@@ -1,5 +1,5 @@
-# elastic-stack
-Elastic stack docker-compose
+# Elastic stack
+Elastic stack project setup with docker-compose to fiddle around.
 
 Compose file including:
 - Elasticsearch
