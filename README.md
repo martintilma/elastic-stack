@@ -1,4 +1,18 @@
 # elastic-stack
 Elastic stack docker-compose
 
-Kibana on: http://localhost:25601
+Compose file including:
+- Elasticsearch
+- Kibana
+- APM server
+
+## Running
+Run with:
+
+`docker-compose up -d`
+
+To make it start next time you restart your machine run: 
+
+`export RESTART_SERVICES=always && docker-compose up -d`
+
+Then go to Kibana on: http://localhost:25601

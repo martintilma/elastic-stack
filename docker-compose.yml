@@ -2,7 +2,7 @@ version: '2.4'
 services:
   apm-server:
     image: docker.elastic.co/apm/apm-server:7.11.2
-    restart: always
+    restart: ${RESTART_SERVICES:-no}
     depends_on:
       elasticsearch:
         condition: service_healthy
@@ -29,7 +29,7 @@ services:
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
-    restart: always
+    restart: ${RESTART_SERVICES:-no}
     environment:
     - bootstrap.memory_lock=true
     - cluster.name=docker-cluster
@@ -53,7 +53,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.11.2
-    restart: always
+    restart: ${RESTART_SERVICES:-no}
     depends_on:
       elasticsearch:
         condition: service_healthy
